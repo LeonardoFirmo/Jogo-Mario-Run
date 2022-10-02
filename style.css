@@ -139,6 +139,16 @@ a{
 
     }
 }
+@media (max-width:500px) {
+    .tubo{
+        position: absolute;
+        bottom: 0;
+        height: 9vh;
+        animation:tubo-animation 1.3s infinite linear;
+    }
+    
+    
+}
 
 
 
@@ -153,3 +163,4 @@ a{
     
     
 }
+

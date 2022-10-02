@@ -52,8 +52,6 @@ a{
     position: absolute;
     bottom: 0;
     height: 11vh;
-    /* left apagavel */
-    /* left: 5.1vw; */
     animation:tubo-animation 2s infinite linear;
 }
 

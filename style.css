@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.game-board{
+    display: none;
+    width: 100%;
+    height: 500px;
+    border-bottom: solid 15px green;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.iniciargame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    
+}
+.iniciargame button{
+    height: 80px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.tuboDerrota{
+    position: absolute;
+    bottom: 0;
+    height: 11vh;
+    left: 4.6vw; 
+}
+.nuvens{
+    height: 30vh;
+    position: absolute;
+    animation:nuvens-animation 7s infinite linear ;
+    
+}
+.tubo{
+    position: absolute;
+    bottom: 0;
+    height: 11vh;
+    /* left apagavel */
+    /* left: 5.1vw; */
+    animation:tubo-animation 2s infinite linear;
+}
+
+.mario{
+    position: absolute;
+    bottom: 0;
+    height: 15vh;
+
+}
+
+
+.jump{
+    animation:mario-jump-animation 800ms ease-out ;
+}
+
+.gameOver{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    font-size: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    
+}
+.fimDeJogo{
+    animation:game-over 6s ease-out ;
+    animation-fill-mode: forwards;
+   
+}
+
+@keyframes game-over{
+    0%{
+        
+      opacity: 1;
+        
+    }
+   
+    100%{
+        opacity: 0;
+       
+        
+    }
+   
+}
+
+
+
+@keyframes tubo-animation{
+    from{
+        right: -15%;
+    }
+    to{
+        right: 100%;
+
+    }
+}
+
+@keyframes nuvens-animation{
+    from{
+        right: -35%;
+    }
+    to{
+        right: 100%;
+
+    }
+}
+
+@keyframes mario-jump-animation{
+    0%{
+        bottom:0;
+    }
+    35%{
+        bottom: 30vh;
+
+    }
+ 
+    45%{
+        bottom: 30vh;
+
+    }
+    100%{
+        bottom:0;
+
+    }
+}
+
+
+
+

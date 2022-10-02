@@ -103,7 +103,6 @@ a{
 }
 
 
-
 @keyframes tubo-animation{
     from{
         right: -15%;
@@ -146,3 +145,13 @@ a{
 
 
 
+@media (max-width:400px) {
+    .tubo{
+        position: absolute;
+        bottom: 0;
+        height: 9vh;
+        animation:tubo-animation 1.1s infinite linear;
+    }
+    
+    
+}

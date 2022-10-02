@@ -12,14 +12,15 @@ const verificaTeclado=document.addEventListener('keydown',addClassJump)
 
 function iniciaJogo(){
     introMusic.play()
-    
     introMusic.volume=0.3
     marioPuloSong.volume=0.3
     iniciargame.style.display='none'
     gameBoard.style.display = 'flex'
     gameOver.style.display='flex'
-
+    verificaDerrota()
+    
     setTimeout(() => {
+        
         const verificaClickCel=document.addEventListener('click',addClassJump)
     }, 200);
 
@@ -39,22 +40,30 @@ function addClassJump (){
        
     }
 
+   
+}
+
+
+function verificaDerrota (){
+    setInterval(() => {
+        const marioAlturaPulo = +window.getComputedStyle(mario).bottom.replace('px','')
+        const tuboAltura = +window.getComputedStyle(tubo).height.replace('px','')
+        const tuboPosition =  tubo.offsetLeft
+        
+        if(tuboPosition < 39 && marioAlturaPulo < tuboAltura){
+            console.log('é menor que 39');
+            mario.src="./assets/img/game-over.png"
+            introMusic.pause()
+            chamaGameOver()
+        }
+        
+    }, 50);
+    
+  
 }
 
 
 
-
-const verificaDerrota = setInterval( () => {
-    const marioPosition = mario.offsetTop
-    const tuboPosition =  tubo.offsetLeft
-
-    if(tuboPosition < 39 && marioPosition >350 ){
-        mario.src="./assets/img/game-over.png"
-        introMusic.pause()
-        chamaGameOver()
-    }
-    
-}, 10);
 
 function chamaGameOver(){
     gameOverSong.play()
@@ -79,8 +88,8 @@ function chamaGameOver(){
                 <a href="./index.html">JOGAR NOVAMENTE</a>
                 </button>
             </div>`
-            const jogarNovamente = document.querySelector('.jogarNovamente')
-            jogarNovamente.addEventListener('click',resetaJogo)
+            // const jogarNovamente = document.querySelector('.jogarNovamente')
+            // jogarNovamente.addEventListener('click',resetaJogo)
             
         }, 6000);
     }, 150);

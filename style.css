@@ -158,9 +158,8 @@ a{
         position: absolute;
         bottom: 0;
         height: 9vh;
-        animation:tubo-animation 1.1s infinite linear;
+        animation:tubo-animation 1.3s infinite linear;
     }
-    
     
 }
 

@@ -28,8 +28,6 @@ function iniciaJogo(){
 
 function addClassJump (){
     
-    
-
     if(!mario.classList.contains('jump')){
     
         marioPuloSong.play()
@@ -40,7 +38,6 @@ function addClassJump (){
        
     }
 
-   
 }
 
 
@@ -49,15 +46,20 @@ function verificaDerrota (){
         const marioAlturaPulo = +window.getComputedStyle(mario).bottom.replace('px','')
         const tuboAltura = +window.getComputedStyle(tubo).height.replace('px','')
         const tuboPosition =  tubo.offsetLeft
-        
+        console.log(tuboPosition);
         if(tuboPosition < 39 && marioAlturaPulo < tuboAltura){
-            console.log('é menor que 39');
+            console.log(tuboPosition);
+           
             mario.src="./assets/img/game-over.png"
+
+            if(marioAlturaPulo < 20 && tuboPosition < 35 ){
+                mario.style.bottom =`${tuboAltura}px`
+            }
             introMusic.pause()
             chamaGameOver()
         }
         
-    }, 50);
+    }, 20);
     
   
 }
@@ -72,7 +74,8 @@ function chamaGameOver(){
     clearInterval(verificaDerrota)
     tubo.style.animation = 'none'
     mario.style.animation = 'none'
-    tubo.classList.add('tuboDerrota')
+    
+    // tubo.classList.add('tuboDerrota')
 
     
     setTimeout(() => {

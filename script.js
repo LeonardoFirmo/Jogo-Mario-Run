@@ -20,7 +20,6 @@ function iniciaJogo(){
     verificaDerrota()
     
     setTimeout(() => {
-        
         const verificaClickCel=document.addEventListener('click',addClassJump)
     }, 200);
 
@@ -29,7 +28,6 @@ function iniciaJogo(){
 function addClassJump (){
     
     if(!mario.classList.contains('jump')){
-    
         marioPuloSong.play()
         mario.classList.add('jump')
         setTimeout(() => {
@@ -58,10 +56,8 @@ function verificaDerrota (){
             introMusic.pause()
             chamaGameOver()
         }
-        
     }, 20);
     
-  
 }
 
 
@@ -74,9 +70,6 @@ function chamaGameOver(){
     clearInterval(verificaDerrota)
     tubo.style.animation = 'none'
     mario.style.animation = 'none'
-    
-    // tubo.classList.add('tuboDerrota')
-
     
     setTimeout(() => {
         gameBoard.classList.add('fimDeJogo')
@@ -91,8 +84,6 @@ function chamaGameOver(){
                 <a href="./index.html">JOGAR NOVAMENTE</a>
                 </button>
             </div>`
-            // const jogarNovamente = document.querySelector('.jogarNovamente')
-            // jogarNovamente.addEventListener('click',resetaJogo)
             
         }, 6000);
     }, 150);

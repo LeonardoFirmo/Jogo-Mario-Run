@@ -139,6 +139,18 @@ a{
 
     }
 }
+
+@media (max-width:770px) {
+    @keyframes nuvens-animation{
+        from{
+            right: -55%;
+        }
+        to{
+            right: 100%;
+        }
+    }
+    
+}
 @media (max-width:500px) {
     .tubo{
         position: absolute;
@@ -147,6 +159,14 @@ a{
         animation:tubo-animation 1.3s infinite linear;
     }
     
+    @keyframes nuvens-animation{
+        from{
+            right: -100%;
+        }
+        to{
+            right: 100%;
+        }
+    }
     
 }
 
@@ -159,6 +179,15 @@ a{
         bottom: 0;
         height: 9vh;
         animation:tubo-animation 1.3s infinite linear;
+    }
+
+    @keyframes nuvens-animation{
+        from{
+            right: -130%;
+        }
+        to{
+            right: 100%;
+        }
     }
     
 }

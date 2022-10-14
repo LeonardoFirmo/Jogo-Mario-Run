@@ -67,6 +67,10 @@ a{
     animation:mario-jump-animation 800ms ease-out ;
 }
 
+#pontuacao{
+    color:yellow
+}
+
 .gameOver{
     height: 100vh;
     width: 100vw;

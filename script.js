@@ -7,6 +7,7 @@ const gameOver = document.querySelector('.gameOver')
 const iniciargame = document.querySelector('.iniciargame')
 const tubo = document.querySelector('.tubo')
 const mario = document.querySelector('.mario')
+const pontuacao = document.querySelector('#pontuacao')
 
 const verificaTeclado=document.addEventListener('keydown',addClassJump)
 
@@ -18,6 +19,7 @@ function iniciaJogo(){
     gameBoard.style.display = 'flex'
     gameOver.style.display='flex'
     verificaDerrota()
+    addPontuacao()
     
     setTimeout(() => {
         const verificaClickCel=document.addEventListener('click',addClassJump)
@@ -92,3 +94,12 @@ function chamaGameOver(){
 
 }
 
+
+function addPontuacao (){
+    let contador = 0
+   const addpontos= setInterval(() => {
+    pontuacao.innerHTML=`SCORE:${contador += 400}`
+    
+    }, 1000);
+    
+}
